@@ -9,6 +9,11 @@ export function Home() {
   const [tasks, setTasks] = useState<Task[]>([]);
 
   function handleAddTask(newTaskTitle: string) {
+
+    if (!newTaskTitle) {
+      return
+    }
+
     const data = {
       id: new Date().getTime(),
       title: newTaskTitle,
